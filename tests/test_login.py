@@ -2,10 +2,6 @@ from data import Data
 from locators import StellarBurgerLocators
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
-import os
-
-login = os.getenv('MYLOGIN', 'EXAMPLE@YA.RU')
-password = os.getenv('MYPASSWORD', '000000')
 
 
 class TestStellarBurgerLogin:
@@ -13,10 +9,10 @@ class TestStellarBurgerLogin:
         login_in_account_button = driver.find_element(*StellarBurgerLocators.LOGIN_IN_ACCOUNT_BUTTON)
         login_in_account_button.click()
         login_input = driver.find_element(*StellarBurgerLocators.LOGIN_INPUT_FIELD)
-        login_input.send_keys(login)
+        login_input.send_keys(Data.login)
 
         password_input = driver.find_element(*StellarBurgerLocators.PASSWORD_INPUT_FIELD)
-        password_input.send_keys(password)
+        password_input.send_keys(Data.password)
 
         login_button = driver.find_element(*StellarBurgerLocators.LOGIN_BUTTON)
         login_button.click()
@@ -31,10 +27,10 @@ class TestStellarBurgerLogin:
         personal_area_button = driver.find_element(*StellarBurgerLocators.PERSONAL_AREA_BUTTON)
         personal_area_button.click()
         login_input = driver.find_element(*StellarBurgerLocators.LOGIN_INPUT_FIELD)
-        login_input.send_keys(login)
+        login_input.send_keys(Data.login)
 
         password_input = driver.find_element(*StellarBurgerLocators.PASSWORD_INPUT_FIELD)
-        password_input.send_keys(password)
+        password_input.send_keys(Data.password)
 
         login_button = driver.find_element(*StellarBurgerLocators.LOGIN_BUTTON)
         login_button.click()
@@ -62,10 +58,10 @@ class TestStellarBurgerLogin:
         login_button_in_reg_area.click()
 
         login_input = driver.find_element(*StellarBurgerLocators.LOGIN_INPUT_FIELD)
-        login_input.send_keys(login)
+        login_input.send_keys(Data.login)
 
         password_input = driver.find_element(*StellarBurgerLocators.PASSWORD_INPUT_FIELD)
-        password_input.send_keys(password)
+        password_input.send_keys(Data.password)
 
         login_button = driver.find_element(*StellarBurgerLocators.LOGIN_BUTTON)
         login_button.click()
@@ -94,10 +90,10 @@ class TestStellarBurgerLogin:
         login_button_in_password_recovery_area.click()
 
         login_input = driver.find_element(*StellarBurgerLocators.LOGIN_INPUT_FIELD)
-        login_input.send_keys(login)
+        login_input.send_keys(Data.login)
 
         password_input = driver.find_element(*StellarBurgerLocators.PASSWORD_INPUT_FIELD)
-        password_input.send_keys(password)
+        password_input.send_keys(Data.password)
 
         login_button = driver.find_element(*StellarBurgerLocators.LOGIN_BUTTON)
         login_button.click()

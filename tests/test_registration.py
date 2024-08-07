@@ -1,5 +1,3 @@
-import time
-
 from data import Data
 from locators import StellarBurgerLocators
 from selenium.webdriver.support import expected_conditions as EC
@@ -34,7 +32,8 @@ class TestStellarBurgerRegistration:
         password_input_field = driver.find_element(*StellarBurgerLocators.PASSWORD_REGISTRATION_INPUT_FIELD)
         password_input_field.send_keys(generated_correct_password)
 
-        time.sleep(1)
+        WebDriverWait(driver, Data.WAIT_TIME).until(
+            EC.visibility_of_element_located(StellarBurgerLocators.REGISTRATION_BUTTON_IN_REGISTRATION_AREA))
 
         register_button = driver.find_element(*StellarBurgerLocators.REGISTRATION_BUTTON_IN_REGISTRATION_AREA)
         register_button.click()
@@ -51,7 +50,8 @@ class TestStellarBurgerRegistration:
         password_input = driver.find_element(*StellarBurgerLocators.PASSWORD_INPUT_FIELD)
         password_input.send_keys(generated_correct_password)
 
-        time.sleep(1)
+        WebDriverWait(driver, Data.WAIT_TIME).until(
+            EC.visibility_of_element_located(StellarBurgerLocators.LOGIN_BUTTON))
 
         login_button = driver.find_element(*StellarBurgerLocators.LOGIN_BUTTON)
         login_button.click()
@@ -91,4 +91,5 @@ class TestStellarBurgerRegistration:
         register_button = driver.find_element(*StellarBurgerLocators.REGISTRATION_BUTTON_IN_REGISTRATION_AREA)
         register_button.click()
 
-        assert driver.find_element(*StellarBurgerLocators.REGISTRATION_ERROR_MESSAGE).text == Data.ERROR_MESSAGE_TEXT
+        assert driver.find_element(
+            *StellarBurgerLocators.REGISTRATION_ERROR_MESSAGE).text == StellarBurgerLocators.ERROR_MESSAGE_TEXT

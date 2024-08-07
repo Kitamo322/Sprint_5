@@ -1,5 +1,3 @@
-import time
-
 from data import Data
 from locators import StellarBurgerLocators
 from selenium.webdriver.support import expected_conditions as EC
@@ -11,10 +9,10 @@ class TestExitButton:
         login_in_account_button = driver.find_element(*StellarBurgerLocators.LOGIN_IN_ACCOUNT_BUTTON)
         login_in_account_button.click()
         login_input = driver.find_element(*StellarBurgerLocators.LOGIN_INPUT_FIELD)
-        login_input.send_keys("ivan_generalov_12@gmail.com")
+        login_input.send_keys(Data.login)
 
         password_input = driver.find_element(*StellarBurgerLocators.PASSWORD_INPUT_FIELD)
-        password_input.send_keys("123456")
+        password_input.send_keys(Data.password)
 
         login_button = driver.find_element(*StellarBurgerLocators.LOGIN_BUTTON)
         login_button.click()
@@ -30,10 +28,9 @@ class TestExitButton:
 
         exit_button = driver.find_element(*StellarBurgerLocators.EXIT_BUTTON)
         exit_button.click()
-        time.sleep(1)
-        login_button = driver.find_element(*StellarBurgerLocators.LOGIN_BUTTON)
 
         WebDriverWait(driver, Data.WAIT_TIME).until(
             EC.visibility_of_element_located(StellarBurgerLocators.LOGIN_BUTTON))
+        login_button = driver.find_element(*StellarBurgerLocators.LOGIN_BUTTON)
 
         assert login_button.is_displayed()

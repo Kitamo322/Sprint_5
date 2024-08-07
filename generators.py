@@ -1,18 +1,18 @@
 import random
 import string
 
+names = ['Ivan', 'Alex', 'Dmitry', 'Pavel', 'Sergey', 'Nikolay', 'Sergey']  # Сделал этот список глобальной переменной
+
 
 class Generators:
     @staticmethod
     def generate_name():
-        names = ['Ivan', 'Alex', 'Dmitry', 'Pavel', 'Sergey', 'Nikolay', 'Sergey']
         chosen_name = random.choice(names)
 
         return f'{chosen_name}'
 
     @staticmethod
     def generate_email():
-        names = ['Ivan', 'Alex', 'Dmitry', 'Pavel', 'Sergey', 'Nikolay', 'Sergey']
         chosen_name = random.choice(names)
         surnames = ['Generalov', 'Ivanov', 'Sidorov', 'Petrov', 'Kapitanov']
         chosen_surname = random.choice(surnames)

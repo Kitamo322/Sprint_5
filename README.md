@@ -1,28 +1,34 @@
-<h1 align="left" style="color:#FFA500">YANDEX PRACTICUM SPRINT #5</h1>
+# <h><center>YANDEX PRACTICUM SPRINT #5<center></h>
+
 <hr>
-<h3 align="left" style="color:#9E7BFF">Developer: Ivan Generalov</h3>
-<h3 align="left" style="color:#9E7BFF">Cohort: #12</h3>
-<h3 align="left" style="color:#9E7BFF">Project: STELLAR BURGERS</h3>
+
+## Developer: Ivan Generalov
+
+## <h>Cohort: #12</h>
+## <h>Project: STELLAR BURGERS</h>
 <hr>
-<h3 align="left" style="color:#E42217">TEST RUN INSTRUCTION:</h3>
-<h3 align="left">To run my tests, you must add two system environment variables "MYPASSWORD" and "MYLOGIN". 
-You can register an account using this link -> https://stellarburgers.nomoreparties.site/register </h3>
+
+## <h>TEST RUN INSTRUCTION:</h>
+### <h> -Install pytest by command in terminal: pip install pytest</h>
+### <h> -Install selenium by command in terminal: pip install selenium</h>
+### <h> -To run all tests use: pytest -v</h>
+
 <hr>
 
 <h3 align="left" style="color:green">Project files and description:</h3>
 
-| File name                 | File Content                                |
-|---------------------------|---------------------------------------------|
-| test_login.py             | Login tests                                 |
-| test_registration.py      | Registration tests                          |
-| tests_go_to_personal_area | Transfer to personal area tests             |
-| test_go_to_constructor    | Transfer to constructor area tests          |
-| test_exit_button          | Logout tests                                |
-| test_constructor_area.py  | Swithing between constructor sections tests |
-| conftest.py               | Project system file                         |
-| data.py                   | Project data file                           |
-| locators.py               | Project locators file                       |
-| generators.py             | Random user generators                      |
+| File name                    | File Content                                |
+|------------------------------|---------------------------------------------|
+| test_login.py                | Login tests                                 |
+| test_registration.py         | Registration tests                          |
+| tests_go_to_personal_area.py | Transfer to personal area tests             |
+| test_go_to_constructor.py    | Transfer to constructor area tests          |
+| test_exit_button.py          | Logout tests                                |
+| test_constructor_area.py     | Swithing between constructor sections tests |
+| conftest.py                  | Project system file                         |
+| data.py                      | Project data file                           |
+| locators.py                  | Project locators file                       |
+| generators.py                | Random user generators                      |
 
 <hr>
 <h3 align="left" style="color:green">test_login.py</h3>
@@ -30,7 +36,7 @@ You can register an account using this link -> https://stellarburgers.nomorepart
 1. test_login_by_login_button_on_main:
 
 > login test from "login button" on main page
-git 
+
 2. test_login_from_personal_area
 
 > login test from "personal area button"
@@ -82,6 +88,14 @@ git
 3. test_switch_to_fillers_section
 
 > successful switch to "FILLERS" section by clicking on "FILLERS BUTTON"
+
+<h3 align="left" style="color:green">test_exit_button.py </h3>
+
+1. test_exit_from_personal_area_successful
+
+> successful logout from account by using "Exit" button in personal area
+
+
 
 
 

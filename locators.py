@@ -33,3 +33,7 @@ class StellarBurgerLocators:
     BUN_HEADER = (By.XPATH, "//h2[text()='Булки']")  # Заголовок раздела "Булки"
     SAUCE_HEADER = (By.XPATH, "//h2[text()='Соусы']")  # Заголовок раздела "Соусы"
     FILLINGS_HEADER = (By.XPATH, "//h2[text()='Начинки']")  # Заголовок раздела "Начинки"
+    CONSTRUCTOR_ACTIVE_SECTION_BUTTON_ATT = "tab_tab__1SPyG tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect"
+    # Значение аттрибута class для активной кнопки переключения режимов
+    HEADER_LOCATION = {'x': 332, 'y': 244}  # Координаты для поиска заголовков
+    ERROR_MESSAGE_TEXT = 'Некорректный пароль'  # Текст ошибки для неверного пароля

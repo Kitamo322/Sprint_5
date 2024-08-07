@@ -1,11 +1,7 @@
-from data import Data
+from data import Data, URL
 from locators import StellarBurgerLocators
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
-import os
-
-login = os.getenv('MYLOGIN', 'EXAMPLE@YA.RU')
-password = os.getenv('MYPASSWORD', '000000')
 
 
 class TestGoToConstructor:
@@ -13,10 +9,10 @@ class TestGoToConstructor:
         login_in_account_button = driver.find_element(*StellarBurgerLocators.LOGIN_IN_ACCOUNT_BUTTON)
         login_in_account_button.click()
         login_input = driver.find_element(*StellarBurgerLocators.LOGIN_INPUT_FIELD)
-        login_input.send_keys(login)
+        login_input.send_keys(Data.login)
 
         password_input = driver.find_element(*StellarBurgerLocators.PASSWORD_INPUT_FIELD)
-        password_input.send_keys(password)
+        password_input.send_keys(Data.password)
 
         login_button = driver.find_element(*StellarBurgerLocators.LOGIN_BUTTON)
         login_button.click()
@@ -28,7 +24,7 @@ class TestGoToConstructor:
         personal_area_button.click()
 
         WebDriverWait(driver, Data.WAIT_TIME).until(
-            EC.url_matches(Data.StellarBurger_Personal_Area_URL))
+            EC.url_matches(URL.StellarBurger_Personal_Area_URL))
 
         constructor_button = driver.find_element(*StellarBurgerLocators.CONSTRUCTOR_BUTTON)
         constructor_button.click()
@@ -44,10 +40,10 @@ class TestGoToConstructor:
         login_in_account_button = driver.find_element(*StellarBurgerLocators.LOGIN_IN_ACCOUNT_BUTTON)
         login_in_account_button.click()
         login_input = driver.find_element(*StellarBurgerLocators.LOGIN_INPUT_FIELD)
-        login_input.send_keys(login)
+        login_input.send_keys(Data.login)
 
         password_input = driver.find_element(*StellarBurgerLocators.PASSWORD_INPUT_FIELD)
-        password_input.send_keys(password)
+        password_input.send_keys(Data.password)
 
         login_button = driver.find_element(*StellarBurgerLocators.LOGIN_BUTTON)
         login_button.click()
@@ -59,7 +55,7 @@ class TestGoToConstructor:
         personal_area_button.click()
 
         WebDriverWait(driver, Data.WAIT_TIME).until(
-            EC.url_matches(Data.StellarBurger_Personal_Area_URL))
+            EC.url_matches(URL.StellarBurger_Personal_Area_URL))
 
         burger_logo = driver.find_element(*StellarBurgerLocators.STELLAR_BURGERS_LOGO)
         burger_logo.click()

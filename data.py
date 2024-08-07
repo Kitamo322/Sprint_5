@@ -1,6 +1,3 @@
-import os
-
-
 class Data:
     WAIT_TIME = 5
     login = 'ivan_generalov_12@gmail.com'
